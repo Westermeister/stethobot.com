@@ -1,0 +1,22 @@
+// Entry point that (very roughly) follows Sass' 7-1 architecture ordering.
+
+// Global variables.
+@import "./variables";
+
+// Bootstrap Reboot (baseline CSS reset to build off of).
+@import "./reboot";
+
+// Define the navbar and the rest of the page's general layout.
+@import "./navbar";
+@import "./layout";
+
+// Define basic markup styling to add content to the page.
+@import "./markup";
+
+// Special styling for forms.
+@import "./forms";
+
+// Page-specific styling.
+@import "./pages/conditions";
+@import "./pages/diagnosis";
+@import "./pages/index";

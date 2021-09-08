@@ -1,0 +1,110 @@
+<!-- prettier-ignore -->
+{% extends "base.html" %}
+
+{% block title -%}
+Legal | Stethobot
+{%- endblock %}
+
+{% block description -%}
+Legal notices, disclaimers, and terms and conditions for Stethobot.
+{%- endblock %}
+
+{% block canonical -%}
+https://stethobot.com/legal
+{%- endblock %}
+
+{% block content %}
+<h1>
+  <img
+    src="{{ url_for('static', filename='images/newspaper.svg') }}"
+    class="emoji"
+    alt="Newspaper emoji"
+  />
+  Terms & Conditions
+</h1>
+<i>Effective April 4, 2021.</i>
+<h2>1. Acceptance</h2>
+<p>
+  By accessing this website, you agree to be bound by these Terms & Conditions.
+  If you do not agree with these Terms & Conditions, you may not access this
+  website.
+</p>
+<h2>2. Provided Services</h2>
+<p>
+  The website provides you with the following services: webpage delivery, email
+  capabilities, and medical diagnosis capabilities. These services are not
+  guaranteed to be perfect e.g. you might not always receive a webpage, or
+  emails might not always be received, or medical diagnoses may be incorrect,
+  among other potential problems.
+</p>
+<h2>3. User Responsibilities</h2>
+<p>
+  You may not use the website for any purpose that is unlawful or prohibited by
+  these Terms & Conditions. You may not use the website in such a manner that it
+  impairs the website's access to other users in any way, or significantly
+  burdens the website's servers; such behavior includes but is not limited to
+  repeatedly using the website's provided services at a frequent pace.
+</p>
+<h2>4. Termination</h2>
+<p>
+  The authors and copyright holders of the website reserve the right to cease or
+  suspend your access to all or any part of the website for any reason
+  whatsoever and without prior notice.
+</p>
+<h2>5. Warranty Disclaimer</h2>
+<p>
+  THE WEBSITE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+</p>
+<h2>6. Limitation of Liability</h2>
+<p>
+  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS OF THE WEBSITE BE LIABLE
+  FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+  TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE WEBSITE OR
+  THE USE OR OTHER DEALINGS IN THE WEBSITE.
+</p>
+<h2>7. Changes to these Terms & Conditions</h2>
+<p>
+  It is possible that changes could be made to these Terms & Conditions. Should
+  that be the case, the new Terms & Conditions will be uploaded to replace these
+  ones, and the effective date (as seen above) will be updated. By continuing to
+  access the website on or after the effective date of the revised Terms &
+  Conditions, you agree to be bound by the revised Terms & Conditions.
+</p>
+<h2>8. Governing Law</h2>
+<p>
+  This agreement will be governed, construed, and enforced in accordance with
+  the laws of the State of California, without regard to its conflict of laws
+  rules.
+</p>
+<h1>
+  <img
+    src="{{ url_for('static', filename='images/shush.svg') }}"
+    class="emoji"
+    alt="Shush emoji"
+  />
+  Privacy Policy
+</h1>
+<p>
+  The website does not store your data. That's it. That's the privacy policy.
+</p>
+<h1>
+  <img
+    src="{{ url_for('static', filename='images/copyright.svg') }}"
+    class="emoji"
+    alt="Copyright symbol"
+  />
+  Emoji Disclaimer
+</h1>
+<p>
+  The website features emojis. The authors and copyright holders of the website
+  do not claim ownership over these emojis. These emojis are part of a library
+  called <a href="https://twemoji.twitter.com/">Twemoji</a> by
+  <a href="https://github.com/twitter/twemoji/graphs/contributors"
+    >Twitter, Inc and other contributors</a
+  >, licensed under
+  <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>. No
+  changes were made to the emojis.
+</p>
+{% endblock %}

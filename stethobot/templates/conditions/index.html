@@ -1,0 +1,198 @@
+<!-- prettier-ignore -->
+{% extends "base.html" %}
+
+{% block title -%}
+Conditions | Stethobot
+{%- endblock %}
+
+{% block description -%}
+A list of conditions that Stethobot supports for computer-aided diagnosis.
+{%- endblock %}
+
+{% block canonical -%}
+https://stethobot.com/conditions/
+{%- endblock %}
+
+{% block content %}
+<h1>
+  <img
+    src="{{ url_for('static', filename='images/horse-rider.svg') }}"
+    class="emoji"
+    alt="Emoji of a person riding a race horse"
+  />
+  Quick Links
+</h1>
+<p>
+  Stethobot currently provides computer-aided diagnosis for the following
+  medical conditions:
+</p>
+<ul>
+  <li><a href="{{ url_for('breast_cancer') }}">Breast Cancer</a></li>
+  <li><a href="{{ url_for('diabetes') }}">Diabetes</a></li>
+  <li><a href="{{ url_for('heart_disease') }}">Heart Disease</a></li>
+</ul>
+
+<h1>
+  <img
+    src="{{ url_for('static', filename='images/magnifying-glass.svg') }}"
+    class="emoji"
+    alt="Emoji of a magnifying glass"
+  />
+  More Information
+</h1>
+
+<h2>
+  <a href="{{ url_for('breast_cancer') }}" class="condition-header"
+    >Breast Cancer</a
+  >
+</h2>
+<h3>Statistics</h3>
+<ul>
+  <li>Accuracy: 96%</li>
+  <li>Sensitivity: 94%</li>
+  <li>Specificity: 97%</li>
+</ul>
+<h3>Sample Source</h3>
+<p>
+  The diagnostic data used to fit the model was collected by the following 3
+  people:
+</p>
+<ol>
+  <li>
+    Dr. William H. Wolberg, General Surgery Dept., University of Wisconsin,
+    Clinical Sciences Center, Madison, WI 53792, wolberg '@'
+    eagle.surgery.wisc.edu
+  </li>
+  <li>
+    W. Nick Street, Computer Sciences Dept, University of Wisconsin, 1210 West
+    Dayton St., Madison, WI 53706
+  </li>
+  <li>
+    Olvi L. Mangasarian, Computer Sciences Dept., University of Wisconsin, 1210
+    West Dayton St., Madison, WI 53706, olvi '@' cs.wisc.edu
+  </li>
+</ol>
+<p>
+  The sample was generously donated by the second author, Nick Street, to the
+  <a href="https://archive.ics.uci.edu/ml/index.php"
+    >UCI Machine Learning Repository</a
+  >:
+</p>
+<ul>
+  <li>
+    Dua, D. and Graff, C. (2019). UCI Machine Learning Repository
+    [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California,
+    School of Information and Computer Science.
+  </li>
+  <li>
+    <a
+      href="https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29"
+      >Breast Cancer Wisconsin (Diagnostic) Data Set</a
+    >
+  </li>
+  <ul>
+    <li>
+      Specifically, the model was fitted on the
+      <a
+        href="https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/wdbc.data"
+        >wdbc.data</a
+      >
+      file.
+    </li>
+  </ul>
+</ul>
+
+<h2>
+  <a href="{{ url_for('diabetes') }}" class="condition-header">Diabetes</a>
+</h2>
+<h3>Statistics</h3>
+<ul>
+  <li>Accuracy: 86%</li>
+  <li>Sensitivity: 82%</li>
+  <li>Specificity: 88%</li>
+</ul>
+<h3>Sample Source</h3>
+<p>
+  The diagnostic data used to fit the model originates from the
+  <a href="https://www.niddk.nih.gov/"
+    >National Institute of Diabetes and Digestive and Kidney Diseases</a
+  >.
+</p>
+<p>
+  The dataset was previously available at the
+  <a href="https://archive.ics.uci.edu/ml/index.php"
+    >UCI Machine Learning Repository</a
+  >, but has since been taken down for reasons unknown. However, a copy can
+  still be accessed (last I checked: March 2021) via
+  <a href="https://www.kaggle.com/uciml/pima-indians-diabetes-database"
+    >Kaggle</a
+  >.
+</p>
+<p>
+  NOTE: There are
+  <a
+    href="https://www.kaggle.com/uciml/pima-indians-diabetes-database/discussion/114293#670637"
+    >missing values</a
+  >
+  (filled as zeros) starting from the <i>Glucose</i> column going through the
+  <i>Age</i> column. Stethobot currently handles these missing values by
+  imputing them via the label-wise median. An alternative — simply removing
+  observations with missing values — was also attempted, but this led to a ~10%
+  drop in accuracy compared to imputation.
+</p>
+
+<h2>
+  <a href="{{ url_for('heart_disease') }}" class="condition-header"
+    >Heart Disease</a
+  >
+</h2>
+<h3>Statistics</h3>
+<ul>
+  <li>Accuracy: 84%</li>
+  <li>Sensitivity: 78%</li>
+  <li>Specificity: 89%</li>
+</ul>
+<h3>Sample Source</h3>
+<p>
+  The diagnostic data used to fit the model was collected by the following 4
+  people:
+</p>
+<ol>
+  <li>Hungarian Institute of Cardiology. Budapest: Andras Janosi, M.D.</li>
+  <li>University Hospital, Zurich, Switzerland: William Steinbrunn, M.D.</li>
+  <li>University Hospital, Basel, Switzerland: Matthias Pfisterer, M.D.</li>
+  <li>
+    V.A. Medical Center, Long Beach and Cleveland Clinic Foundation: Robert
+    Detrano, M.D., Ph.D.
+  </li>
+</ol>
+<p>
+  The dataset was generously donated by David W. Aha (aha '@' ics.uci.edu, (714)
+  856-8779) to the
+  <a href="https://archive.ics.uci.edu/ml/index.php"
+    >UCI Machine Learning Repository</a
+  >:
+</p>
+<ul>
+  <li>
+    Dua, D. and Graff, C. (2019). UCI Machine Learning Repository
+    [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California,
+    School of Information and Computer Science.
+  </li>
+  <li>
+    <a href="https://archive.ics.uci.edu/ml/datasets/Heart+Disease"
+      >Heart Disease Data Set</a
+    >
+  </li>
+  <ul>
+    <li>
+      Specifically, the model was fitted on the
+      <a
+        href="https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data"
+        >processed.cleveland.data</a
+      >
+      file.
+    </li>
+  </ul>
+</ul>
+{% endblock %}

@@ -1,0 +1,98 @@
+// Provides styling for basic markup e.g. headings, body text, emojis, links, lists, etc.
+
+@import "./variables";
+
+body {
+  font-family: $font-stack;
+  // We're typing an almost-black on an almost-white background.
+  color: $off-black;
+  background-color: $off-white;
+}
+
+// Smaller headings for mobile.
+@media screen and (max-width: $as-big-as) {
+  h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    margin: 35px 0;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    letter-spacing: 0.25px;
+    margin: 25px 0;
+    font-weight: 400;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    letter-spacing: 0;
+    font-weight: 400;
+    margin: 20px 0;
+  }
+}
+
+// Larger headings for desktop.
+@media screen and (min-width: $as-small-as) {
+  h1 {
+    font-size: 3.75rem;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    margin: 40px 0;
+  }
+
+  h2 {
+    font-size: 2.125rem;
+    letter-spacing: 0.25px;
+    margin: 30px 0;
+    font-weight: 400;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    letter-spacing: 0;
+    font-weight: 400;
+    margin: 25px 0;
+  }
+}
+
+// Size emojis for inline headings and body text.
+img.emoji {
+  height: 1em;
+  width: 1em;
+  margin: 0 0.05em 0 0.1em;
+  vertical-align: -0.1em;
+}
+
+// Use a constant line height.
+p,
+ol,
+ul {
+  line-height: 1.5rem;
+}
+
+// Bold styling for strong elements.
+strong {
+  font-weight: 700;
+}
+
+// Italic styling for em elements.
+em {
+  font-style: italic;
+}
+
+// Style links to be more eye-catching.
+a {
+  color: $off-black;
+  font-weight: 500;
+  text-decoration-thickness: 2px;
+  text-decoration-color: $color-primary-shade;
+}
+
+// Same as above, but remove the underline upon hover (or active for mobile).
+a:hover,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}

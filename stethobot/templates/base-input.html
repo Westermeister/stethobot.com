@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='styles/css/main.css') }}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='images/favicon.ico') }}"
+      type="image/x-icon"
+    />
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="{% block description %}{% endblock %}" />
+    <link rel="canonical" href="{% block canonical %}{% endblock %}" />
+  </head>
+  <body>
+    <nav>
+      <a href="{{ url_for('index') }}" id="home-link">Stethobot</a>
+      <div>
+        <a href="{{ url_for('conditions') }}">CONDITIONS</a>
+        <a href="{{ url_for('legal') }}">LEGAL</a>
+      </div>
+    </nav>
+    <div id="content">
+      {% block content %}{% endblock %}
+      <form action="{% block action %}{% endblock %}" method="post">
+        {% block inputs %}{% endblock %}
+        <input required type="checkbox" id="agreement" />
+        <label for="agreement" class="checkbox-label"
+          >I agree to the
+          <a href="{{ url_for('legal') }}">Terms &amp; Conditions</a>.</label
+        >
+        <br />
+        <br />
+        <input class="form-submit" type="submit" value="DIAGNOSE" />
+      </form>
+    </div>
+  </body>
+</html>

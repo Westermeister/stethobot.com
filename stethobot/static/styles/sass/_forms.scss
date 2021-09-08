@@ -1,0 +1,50 @@
+// Styling for common form elements.
+
+@import "./variables";
+
+label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 1.25px;
+  margin-left: 8px;
+}
+
+.typable-field {
+  width: 95%;
+  border: 1px solid gray;
+  border-radius: 6px;
+  background-color: $off-white;
+  padding: 8px 8px;
+}
+
+.form-submit {
+  background-color: $color-primary;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 1.25px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 2px -2px gray;
+}
+
+.form-submit:hover,
+.form-submit:active {
+  background-color: $color-primary-shade;
+}
+
+// In the case of labels for radio/checkbox buttons, just display normal text.
+.radio-label,
+.checkbox-label {
+  font-family: $font-stack;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: normal;
+}
+
+.radio-field {
+  margin-left: 8px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}

@@ -1,0 +1,200 @@
+<!-- prettier-ignore -->
+{% extends "base-input.html" %}
+
+{% block title -%}
+Diagnose breast cancer | Stethobot
+{%- endblock %}
+
+{% block description -%}
+Computer-aided diagnosis for breast cancer.
+{%- endblock %}
+
+{% block canonical -%}
+https://stethobot.com/conditions/breast-cancer
+{%- endblock %}
+
+{% block content %}
+<h1>Breast Cancer Diagnosis</h1>
+<h2>Prerequisites</h2>
+<p>
+  In order to diagnose breast cancer, Stethobot needs a series of measurements
+  from a grayscale image of a fine needle aspirate of a breast mass. These
+  measurements describe characteristics of the cell nuclei present in the image.
+  In particular, Stethobot requires the <b>means</b>, <b>standard errors</b>,
+  and <b>maximums</b> of the following 10 values:
+</p>
+<ol>
+  <li>Radius (mean of distances from center to points on perimeter)</li>
+  <li>Texture (standard deviation of grayscale values)</li>
+  <li>Perimeter</li>
+  <li>Area</li>
+  <li>Smoothness (local variation in raidus lengths)</li>
+  <li>Compactness (perimeter^2 / (area - 1))</li>
+  <li>Concavity (severity of concave portions of the contour)</li>
+  <li>Concave points (number of concave portions of the contour)</li>
+  <li>Symmetry</li>
+  <li>Fractal dimension ("coastline approximation" - 1)</li>
+</ol>
+<p>
+  If any of this is unclear in any way, Stethobot hosts a copy of the
+  <a href="/docs/breast-cancer">official documentation</a> from the creators of
+  the dataset that the diagnosis model is fit on. This documentation, from the
+  <a href="https://www.wisc.edu/">University of Wisconsin-Madison</a>, goes more
+  in-depth into how to procure these values. Please read it thoroughly.
+</p>
+<p>
+  Please prepare these values, preferably with 4 or more significant digits.
+  Then, enter the mean, standard error, and maximum as a
+  <strong>comma-separated list</strong> e.g. <strong>1,2,3</strong> for each
+  field shown below. Examples are provided for each field.
+  <b>All fields are required</b>.
+</p>
+<h2>Inputs</h2>
+{% endblock %}
+
+<!-- prettier-ignore -->
+{% block action -%}
+/api/diagnose/breast-cancer
+{%- endblock %}
+
+{% block inputs %}
+<label for="radius">RADIUS</label>
+<br />
+<input
+  required
+  id="radius"
+  class="typable-field"
+  type="text"
+  name="radius"
+  pattern="\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*,\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*,\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*"
+/>
+
+<br />
+<br />
+
+<label for="texture">TEXTURE</label>
+<br />
+<input
+  required
+  id="texture"
+  class="typable-field"
+  type="text"
+  name="texture"
+  pattern="\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*,\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*,\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*"
+/>
+
+<br />
+<br />
+
+<label for="perimeter">PERIMETER</label>
+<br />
+<input
+  required
+  id="perimeter"
+  class="typable-field"
+  type="text"
+  name="perimeter"
+  pattern="\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*,\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*,\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*"
+/>
+
+<br />
+<br />
+
+<label for="area">AREA</label>
+<br />
+<input
+  required
+  id="area"
+  class="typable-field"
+  type="text"
+  name="area"
+  pattern="\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*,\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*,\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*"
+/>
+
+<br />
+<br />
+
+<label for="smoothness">SMOOTHNESS</label>
+<br />
+<input
+  required
+  id="smoothness"
+  class="typable-field"
+  type="text"
+  name="smoothness"
+  pattern="\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*,\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*,\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*"
+/>
+
+<br />
+<br />
+
+<label for="compactness">COMPACTNESS</label>
+<br />
+<input
+  required
+  id="compactness"
+  class="typable-field"
+  type="text"
+  name="compactness"
+  pattern="\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*,\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*,\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*"
+/>
+
+<br />
+<br />
+
+<label for="concavity">CONCAVITY</label>
+<br />
+<input
+  required
+  id="concavity"
+  class="typable-field"
+  type="text"
+  name="concavity"
+  pattern="\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*,\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*,\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*"
+/>
+
+<br />
+<br />
+
+<label for="concave">CONCAVE POINTS</label>
+<br />
+<input
+  required
+  id="concave"
+  class="typable-field"
+  type="text"
+  name="concave"
+  pattern="\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*,\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*,\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*"
+/>
+
+<br />
+<br />
+
+<label for="symmetry">SYMMETRY</label>
+<br />
+<input
+  required
+  id="symmetry"
+  class="typable-field"
+  type="text"
+  name="symmetry"
+  pattern="\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*,\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*,\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*"
+/>
+
+<br />
+<br />
+
+<label for="fractal">FRACTAL DIMENSION</label>
+<br />
+<input
+  required
+  id="fractal"
+  class="typable-field"
+  type="text"
+  name="fractal"
+  pattern="\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*,\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*,\s*((\d+\.\d+)|(\.\d+)|(\d+))\s*"
+/>
+
+<br />
+<br />
+{% endblock %}

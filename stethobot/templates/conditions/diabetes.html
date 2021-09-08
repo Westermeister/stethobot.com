@@ -1,0 +1,171 @@
+<!-- prettier-ignore -->
+{% extends "base-input.html" %}
+
+{% block title -%}
+Diagnose diabetes | Stethobot
+{%- endblock %}
+
+{% block description -%}
+Computer-aided diagnosis for diabetes.
+{%- endblock %}
+
+{% block canonical -%}
+https://stethobot.com/conditions/diabetes
+{%- endblock %}
+
+{% block content %}
+<h1>Diabetes Diagnosis</h1>
+<h2>Prerequisites</h2>
+<p>In order to diagnose diabetes, Stethobot needs the following 8 values:</p>
+<ol>
+  <li>Number of times the patient has been pregnant.</li>
+  <li>
+    Plasma glucose concentration, 2 hours in an oral glucose tolerance test.
+  </li>
+  <li>Diastolic blood pressure (mmHg).</li>
+  <li>Skin thickness i.e. triceps skin fold thickness (mm).</li>
+  <li>Insulin i.e. 2-hour serum insulin (muU/ml).</li>
+  <li>BMI i.e. body mass index.</li>
+  <li>Diabetes pedigree function.</li>
+  <li>Age in years.</li>
+</ol>
+<p>
+  If any of this is unclear in any way, please check out the
+  <a href="https://www.kaggle.com/uciml/pima-indians-diabetes-database">
+    source of the dataset used to train this model</a
+  >. Since the dataset originates from the
+  <a href="https://www.niddk.nih.gov/"
+    >National Institute of Diabetes and Digestive and Kidney Diseases</a
+  >, you may also direct inquiries there. Additionally, in the input fields
+  below, example values are provided.
+</p>
+<p><b>All fields are required</b>.</p>
+<h2>Inputs</h2>
+{% endblock %}
+
+<!-- prettier-ignore -->
+{% block action -%}
+/api/diagnose/diabetes
+{%- endblock %}
+
+{% block inputs %}
+<label for="pregnancies">NUMBER OF PREGNANCIES</label>
+<br />
+<input
+  required
+  type="text"
+  class="typable-field"
+  id="pregnancies"
+  name="pregnancies"
+  pattern="\s*(([0-9]+(\.[0-9]+)?)|(([0-9]+(\.)?))|(\.[0-9]+))\s*"
+  placeholder="e.g. 0"
+/>
+
+<br />
+<br />
+
+<label for="plasma">PLASMA GLUCOSE CONCENTRATION</label>
+<br />
+<input
+  required
+  type="text"
+  class="typable-field"
+  id="plasma"
+  name="plasma"
+  pattern="\s*(([0-9]+(\.[0-9]+)?)|(([0-9]+(\.)?))|(\.[0-9]+))\s*"
+  placeholder="e.g. 137"
+/>
+
+<br />
+<br />
+
+<label for="diastolic">DIASTOLIC BLOOD PRESSURE (mmHg)</label>
+<br />
+<input
+  required
+  type="text"
+  class="typable-field"
+  id="diastolic"
+  name="diastolic"
+  pattern="\s*(([0-9]+(\.[0-9]+)?)|(([0-9]+(\.)?))|(\.[0-9]+))\s*"
+  placeholder="e.g. 40"
+/>
+
+<br />
+<br />
+
+<label for="skin">TRICEPS SKIN FOLD THICKNESS (mm)</label>
+<br />
+<input
+  required
+  type="text"
+  class="typable-field"
+  id="skin"
+  name="skin"
+  pattern="\s*(([0-9]+(\.[0-9]+)?)|(([0-9]+(\.)?))|(\.[0-9]+))\s*"
+  placeholder="e.g. 35"
+/>
+
+<br />
+<br />
+
+<label for="insulin">2-HOUR SERUM INSULIN (muU/ml)</label>
+<br />
+<input
+  required
+  type="text"
+  class="typable-field"
+  id="insulin"
+  name="insulin"
+  pattern="\s*(([0-9]+(\.[0-9]+)?)|(([0-9]+(\.)?))|(\.[0-9]+))\s*"
+  placeholder="e.g. 168"
+/>
+
+<br />
+<br />
+
+<label for="bmi">BODY MASS INDEX</label>
+<br />
+<input
+  required
+  type="text"
+  class="typable-field"
+  id="bmi"
+  name="bmi"
+  pattern="\s*(([0-9]+(\.[0-9]+)?)|(([0-9]+(\.)?))|(\.[0-9]+))\s*"
+  placeholder="e.g. 43.1"
+/>
+
+<br />
+<br />
+
+<label for="pedigree">DIABETES PEDIGREE FUNCTION</label>
+<br />
+<input
+  required
+  type="text"
+  class="typable-field"
+  id="pedigree"
+  name="pedigree"
+  pattern="\s*(([0-9]+(\.[0-9]+)?)|(([0-9]+(\.)?))|(\.[0-9]+))\s*"
+  placeholder="e.g. 2.288"
+/>
+
+<br />
+<br />
+
+<label for="age">AGE IN YEARS</label>
+<br />
+<input
+  required
+  type="text"
+  class="typable-field"
+  id="age"
+  name="age"
+  pattern="\s*(([0-9]+(\.[0-9]+)?)|(([0-9]+(\.)?))|(\.[0-9]+))\s*"
+  placeholder="e.g. 33"
+/>
+
+<br />
+<br />
+{% endblock %}

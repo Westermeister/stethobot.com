@@ -1,0 +1,28 @@
+// Page-specific styling for conditions.html.
+
+@import "../variables";
+
+@media screen and (max-width: $as-big-as) {
+  // Only mobile difference is slightly smaller font size.
+  .condition-header {
+    font-weight: 400;
+    font-size: 1.75rem;
+    letter-spacing: 0.25px;
+    text-decoration-thickness: 6px;
+    text-decoration-color: $color-primary-shade;
+  }
+}
+
+@media screen and (min-width: $as-small-as) {
+  .condition-header {
+    font-weight: 400;
+    font-size: 2.125rem;
+    letter-spacing: 0.25px;
+    text-decoration-thickness: 6px;
+    text-decoration-color: $color-primary-shade;
+  }
+}
+
+.condition-header:hover {
+  text-decoration: none;
+}

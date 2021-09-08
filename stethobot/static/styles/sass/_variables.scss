@@ -1,0 +1,20 @@
+// Holds all global variables.
+
+// Whole website uses only the Roboto font.
+$font-stack: Roboto, sans-serif;
+
+// Breakpoints for responsive design.
+// 768px is generally big enough for large-screen styling.
+$as-big-as: 767px;
+$as-small-as: 768px;
+
+// Pure white and black is too much of a contrast. Use these instead.
+$off-white: #f5f5f5;
+$off-black: #2b2b2b;
+
+// Main brand color is cyan, and we have a shade for accents.
+$color-primary: #00d8ff;
+$color-primary-shade: #00c7f8;
+
+// The height of the navbar.
+$navbar-height: 45px;

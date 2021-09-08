@@ -1,0 +1,438 @@
+<!-- prettier-ignore -->
+{% extends "base-input.html" %}
+
+{% block title -%}
+Diagnose heart disease | Stethobot
+{%- endblock %}
+
+{% block description -%}
+Computer-aided diagnosis for heart disease.
+{%- endblock %}
+
+{% block canonical -%}
+https://stethobot.com/conditions/heart-disease
+{%- endblock %}
+
+{% block content %}
+<h1>Heart Disease Diagnosis</h1>
+<h2>Prerequisites</h2>
+<p>
+  In order to diagnose heart disease, Stethobot requires the following 13 values
+  about the patient:
+</p>
+<ol>
+  <li>Age in years.</li>
+  <li>Biological sex i.e. male or female.</li>
+  <li>Chest pain type i.e. one of the following:</li>
+  <ul>
+    <li>typical angina</li>
+    <li>atypical angina</li>
+    <li>non-anginal pain</li>
+    <li>asymptomatic</li>
+  </ul>
+  <li>Resting blood pressure in mmHg on admission to hospital.</li>
+  <li>Serum cholesterol in mg/dl.</li>
+  <li>Whether or not fasting blood sugar > 120 mg/dl.</li>
+  <li>
+    Resting electrocardiographic results i.e. one of the following:
+    <ul>
+      <li>normal</li>
+      <li>
+        ST-T wave abnormality (T wave inversions and/or ST elevation or
+        depression of > 0.05mV)
+      </li>
+      <li>
+        probable or definite left ventricular hypertrophy by Estes' criteria
+      </li>
+    </ul>
+  </li>
+
+  <li>Maximum heart rate achieved.</li>
+  <li>Exercised induced angina: yes or no?</li>
+  <li>
+    ST depression induced by exercise relative to rest. ST relates to positions
+    on the ECG plot. Learn more
+    <a href="https://litfl.com/st-segment-ecg-library/">here</a>.
+  </li>
+  <li>Slope of the peak exercise ST segment i.e. one of the following:</li>
+  <ul>
+    <li>upsloping</li>
+    <li>flat</li>
+    <li>downsloping</li>
+  </ul>
+  <li>Number of major blood vessels (0-3) colored by flourosopy.</li>
+  <li>
+    Thalassemia i.e. one of the following:
+    <ul>
+      <li>3 = normal</li>
+      <li>6 = fixed defect</li>
+      <li>7 = reversable defect</li>
+    </ul>
+  </li>
+</ol>
+
+<p>
+  For more information, please check out the
+  <a href="https://archive.ics.uci.edu/ml/datasets/heart+disease">
+    source of the dataset used to train this diagnosis model.</a
+  >
+</p>
+<p><b>All fields are required</b>.</p>
+<h2>Inputs</h2>
+{% endblock %}
+
+<!-- prettier-ignore -->
+{% block action -%}
+/api/diagnose/heart-disease
+{%- endblock %}
+
+{% block inputs %}
+<label for="age">AGE IN YEARS</label>
+<br />
+<input
+  required
+  type="text"
+  class="typable-field"
+  name="age"
+  id="age"
+  placeholder="e.g. 63"
+  pattern="\s*(([0-9]+(\.[0-9]+)?)|(([0-9]+(\.)?))|(\.[0-9]+))\s*"
+/>
+
+<br />
+<br />
+
+<label for="sex">SEX</label>
+<div id="sex">
+  <input
+    required
+    class="radio-field"
+    type="radio"
+    name="sex"
+    id="male"
+    value="1"
+  />
+  <label class="radio-label" for="male">Male</label>
+  <br />
+  <input
+    required
+    class="radio-field"
+    type="radio"
+    name="sex"
+    id="female"
+    value="0"
+  />
+  <label class="radio-label" for="female">Female</label>
+</div>
+
+<br />
+
+<label for="chest">TYPE OF CHEST PAIN</label>
+<div id="chest">
+  <input
+    required
+    class="radio-field"
+    type="radio"
+    name="chest"
+    id="typical-angina"
+    value="1"
+  />
+  <label class="radio-label" for="typical-angina">Typical Angina</label>
+  <br />
+  <input
+    required
+    class="radio-field"
+    type="radio"
+    name="chest"
+    id="atypical-angina"
+    value="2"
+  />
+  <label class="radio-label" for="atypical-angina">Atypical Angina</label>
+  <br />
+  <input
+    required
+    class="radio-field"
+    type="radio"
+    name="chest"
+    id="non-anginal-pain"
+    value="3"
+  />
+  <label class="radio-label" for="non-anginal-pain">Non-Anginal Pain</label>
+  <br />
+  <input
+    required
+    class="radio-field"
+    type="radio"
+    name="chest"
+    id="asymptomatic"
+    value="4"
+  />
+  <label class="radio-label" for="asymptomatic">Asymptomatic</label>
+</div>
+
+<br />
+
+<label for="pressure">RESTING BLOOD PRESSURE (mmHg)</label>
+<br />
+<input
+  required
+  type="text"
+  class="typable-field"
+  name="pressure"
+  id="pressure"
+  placeholder="e.g. 145"
+  pattern="\s*(([0-9]+(\.[0-9]+)?)|(([0-9]+(\.)?))|(\.[0-9]+))\s*"
+/>
+
+<br />
+<br />
+
+<label for="serum">SERUM CHOLESTEROL (mg/dl)</label>
+<br />
+<input
+  required
+  type="text"
+  class="typable-field"
+  name="serum"
+  id="serum"
+  placeholder="e.g. 233"
+  pattern="\s*(([0-9]+(\.[0-9]+)?)|(([0-9]+(\.)?))|(\.[0-9]+))\s*"
+/>
+
+<br />
+<br />
+
+<label for="sugar">FASTING BLOOD SUGAR &gt; 120 mg/dl</label>
+<div id="sugar">
+  <input
+    required
+    class="radio-field"
+    type="radio"
+    name="sugar"
+    id="sugar-yes"
+    value="1"
+  />
+  <label class="radio-label" for="sugar-yes">Yes</label>
+  <br />
+  <input
+    required
+    class="radio-field"
+    type="radio"
+    name="sugar"
+    id="sugar-no"
+    value="2"
+  />
+  <label class="radio-label" for="sugar-no">No</label>
+</div>
+
+<br />
+
+<label for="elec">RESTING ELECTROCARDIOGRAPHIC RESULTS</label>
+<div id="elec">
+  <input
+    required
+    class="radio-field"
+    type="radio"
+    name="elec"
+    id="normal"
+    value="0"
+  />
+  <label class="radio-label" for="normal">Normal</label>
+  <br />
+  <input
+    required
+    class="radio-field"
+    type="radio"
+    name="elec"
+    id="st"
+    value="1"
+  />
+  <label class="radio-label" for="st">ST-T Wave Abnormality</label>
+  <br />
+  <input
+    required
+    class="radio-field"
+    type="radio"
+    name="elec"
+    id="hypertrophy"
+    value="2"
+  />
+  <label class="radio-label" for="hypertrophy"
+    >Left Ventricular Hypertrophy</label
+  >
+</div>
+
+<br />
+
+<label for="thalach">MAXIMUM HEART RATE ACHIEVED</label>
+<br />
+<input
+  required
+  type="text"
+  class="typable-field"
+  name="thalach"
+  id="thalach"
+  placeholder="e.g. 150"
+  pattern="\s*(([0-9]+(\.[0-9]+)?)|(([0-9]+(\.)?))|(\.[0-9]+))\s*"
+/>
+
+<br />
+<br />
+
+<label for="exang">EXERCISE-INDUCED ANGINA</label>
+<div id="exang">
+  <input
+    required
+    class="radio-field"
+    type="radio"
+    name="exang"
+    id="exang-yes"
+    value="1"
+  />
+  <label class="radio-label" for="exang-yes">Yes</label>
+  <br />
+  <input
+    required
+    class="radio-field"
+    type="radio"
+    name="exang"
+    id="exang-no"
+    value="0"
+  />
+  <label class="radio-label" for="exang-no">No</label>
+</div>
+
+<br />
+
+<label for="oldpeak">ST DEPRESSION INDUCED BY EXERCISE RELATIVE TO REST</label>
+<br />
+<input
+  required
+  type="text"
+  class="typable-field"
+  name="oldpeak"
+  id="oldpeak"
+  placeholder="e.g. 2.3"
+  pattern="\s*(([0-9]+(\.[0-9]+)?)|(([0-9]+(\.)?))|(\.[0-9]+))\s*"
+/>
+
+<br />
+<br />
+
+<label for="slope">SLOPE OF THE PEAK EXERCISE ST SEGMENT</label>
+<div id="slope">
+  <input
+    required
+    class="radio-field"
+    type="radio"
+    name="slope"
+    id="upsloping"
+    value="1"
+  />
+  <label class="radio-label" for="upsloping">Upsloping</label>
+  <br />
+  <input
+    required
+    class="radio-field"
+    type="radio"
+    name="slope"
+    id="flat"
+    value="2"
+  />
+  <label class="radio-label" for="flat">Flat</label>
+  <br />
+  <input
+    required
+    class="radio-field"
+    type="radio"
+    name="slope"
+    id="downsloping"
+    value="3"
+  />
+  <label class="radio-label" for="downsloping">Downsloping</label>
+</div>
+
+<br />
+
+<label for="vessels">NUMBER OF MAJOR BLOOD VESSELS COLORED BY FLOUROSOPY</label>
+<div id="vessels">
+  <input
+    required
+    class="radio-field"
+    type="radio"
+    name="vessels"
+    id="vessels-0"
+    value="0"
+  />
+  <label class="radio-label" for="vessels-0">0</label>
+  <br />
+  <input
+    required
+    class="radio-field"
+    type="radio"
+    name="vessels"
+    id="vessels-1"
+    value="1"
+  />
+  <label class="radio-label" for="vessels-1">1</label>
+  <br />
+  <input
+    required
+    class="radio-field"
+    type="radio"
+    name="vessels"
+    id="vessels-2"
+    value="2"
+  />
+  <label class="radio-label" for="vessels-2">2</label>
+  <br />
+  <input
+    required
+    class="radio-field"
+    type="radio"
+    name="vessels"
+    id="vessels-3"
+    value="3"
+  />
+  <label class="radio-label" for="vessels-3">3</label>
+</div>
+
+<br />
+
+<label for="thal">THALASSEMIA</label>
+<div id="thal">
+  <input
+    required
+    class="radio-field"
+    type="radio"
+    name="thal"
+    id="thal-normal"
+    value="3"
+  />
+  <label class="radio-label" for="thal-normal">Normal</label>
+  <br />
+  <input
+    required
+    class="radio-field"
+    type="radio"
+    name="thal"
+    id="thal-fixed-defect"
+    value="6"
+  />
+  <label class="radio-label" for="thal-fixed-defect">Fixed Defect</label>
+  <br />
+  <input
+    required
+    class="radio-field"
+    type="radio"
+    name="thal"
+    id="thal-reversable-defect"
+    value="7"
+  />
+  <label class="radio-label" for="thal-reversable-defect"
+    >Reversable Defect</label
+  >
+</div>
+
+<br />
+{% endblock %}

@@ -1,0 +1,78 @@
+// Page-specific styling for index.html.
+
+// Optimize hero/title section for mobile.
+@media screen and (max-width: $as-big-as) {
+  #title-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8rem;
+    padding-bottom: 2rem;
+  }
+
+  // Use default h1 font size.
+  #title {
+    font-weight: 300;
+    margin-top: -80px;
+    margin-bottom: 10px;
+  }
+
+  // Smaller than normal "emoji-h1" class (in base/typography).
+  // This is because we have two emojis on both sides of the title, and don't want newlines.
+  .title-emoji {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+// Make hero/title section a bit more ambitious if we have screen space to spare.
+@media screen and (min-width: $as-small-as) {
+  #title-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15rem;
+    padding-bottom: 3rem;
+  }
+
+  // Use a bigger-than-normal h1 'cause we can get away with it.
+  #title {
+    font-size: 5rem;
+    font-weight: 300;
+    margin-top: -160px;
+    margin-bottom: 10px;
+  }
+
+  // Same idea for the emojis.
+  .title-emoji {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+// Default subtitle sizing for both large/small screens is fine.
+#subtitle {
+  font-weight: 300;
+}
+
+#get-started {
+  background-color: $color-primary;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 1.25px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 2px -2px gray;
+  text-decoration: none;
+}
+
+#get-started:hover,
+#get-started:active {
+  background-color: $color-primary-shade;
+}

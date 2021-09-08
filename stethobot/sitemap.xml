@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://stethobot.com</loc>
+  </url>
+  <url>
+    <loc>https://stethobot.com/legal</loc>
+  </url>
+  <url>
+    <loc>https://stethobot.com/conditions/</loc>
+  </url>
+  <url>
+    <loc>https://stethobot.com/conditions/breast-cancer</loc>
+  </url>
+  <url>
+    <loc>https://stethobot.com/conditions/diabetes</loc>
+  </url>
+  <url>
+    <loc>https://stethobot.com/conditions/heart-disease</loc>
+  </url>
+</urlset>

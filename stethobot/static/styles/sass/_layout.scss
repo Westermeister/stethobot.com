@@ -1,0 +1,24 @@
+// Define the spacing of the general layout of the page.
+
+// For mobile, keep content width close to 100% but keep some margin.
+@media screen and (max-width: $as-big-as) {
+  #content {
+    margin: 0 auto;
+    max-width: 90%;
+    text-align: left;
+  }
+}
+
+// For desktop, limit the width so we don't grow indefinitely.
+@media screen and (min-width: $as-small-as) {
+  #content {
+    margin: 0 auto;
+    max-width: 730px;
+    text-align: left;
+  }
+}
+
+// Give the footer some spacing so the page doesn't end abruptly.
+body {
+  margin-bottom: 100px;
+}

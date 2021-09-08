@@ -1,0 +1,84 @@
+// Provides styling for the navbar.
+
+@import "./variables";
+
+nav {
+  height: $navbar-height;
+  background-color: $color-primary;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 0 4px 2px gray;
+
+  // Separate home and other links, and vertically-align each link.
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body {
+  // Without this, the navbar won't fit across the whole width of the screen.
+  margin: 0;
+  // Make the body start immediately after the navbar.
+  padding-top: $navbar-height;
+}
+
+// Optimize the navbar for smaller screens.
+@media screen and (max-width: $as-big-as) {
+  // Shifts the home link to the left end for compactness, and makes it smaller.
+  #home-link {
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: $off-black;
+    text-decoration: none;
+    margin-left: 10px;
+  }
+
+  // Shifts all the links a little more to the right end for compactness.
+  nav div {
+    margin-right: 5px;
+  }
+
+  // Smaller font, width padding, and letter spacing.
+  nav div a {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: $off-black;
+    padding: 8px 5px;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+}
+
+// If we have 500px or up, this larger styling works fine.
+@media screen and (min-width: 500px) {
+  #home-link {
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: $off-black;
+    text-decoration: none;
+    margin-left: 25px;
+  }
+
+  nav div {
+    margin-right: 10px;
+  }
+
+  nav div a {
+    font-size: 0.875rem;
+    letter-spacing: 1.25px;
+    font-weight: 500;
+    color: $off-black;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+}
+
+// Provide feedback upon hovering over one of the navbar links (excluding header).
+nav div a:hover,
+nav div a:active {
+  background-color: $color-primary-shade;
+}

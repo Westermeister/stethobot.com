@@ -1,0 +1,133 @@
+<!-- prettier-ignore -->
+{% extends "base.html" %}
+
+{% block title -%}
+Stethobot - Computer-Aided Diagnosis
+{%- endblock %}
+
+{% block description -%}
+Stethobot provides assistance to medical workers in diagnosing a variety of medical conditions.
+{%- endblock %}
+
+{% block canonical -%}
+https://stethobot.com
+{%- endblock %}
+
+{% block content %}
+<header id="title-section">
+  <h1 id="title">
+    <img
+      src="{{ url_for('static', filename='images/stethoscope.svg') }}"
+      alt="Emoji of a stethoscope"
+      class="title-emoji"
+    />
+    Stethobot
+    <img
+      src="{{ url_for('static', filename='images/favicon.svg') }}"
+      alt="Emoji of a robot"
+      class="title-emoji"
+    />
+  </h1>
+  <h2 id="subtitle">computer-aided diagnosis</h2>
+  <a href="{{ url_for('conditions') }}" id="get-started">GET STARTED</a>
+</header>
+<h2>What is this?</h2>
+<p>
+  Stethobot is a <strong>proof-of-concept</strong> website designed to help
+  medical professionals diagnose their patients with certain medical conditions.
+  <strong>Stethobot is not intended for real-world usage.</strong>
+</p>
+<p>
+  The idea behind Stethobot is simple. A medical professional first collects
+  various measurements about a patient. What these measurements are depends on
+  the specific medical condition that the professional wants to test for, and
+  can include values such as BMI, blood pressure, or age. Then, these values are
+  sent to Stethobot's servers, which run powerful machine learning algorithms on
+  the given data to generate a predicted diagnosis.
+</p>
+<h2>Why Stethobot?</h2>
+<p>
+  There are a number of reasons that medical professionals might take a look at
+  Stethobot:
+</p>
+<ul>
+  <li>
+    <strong>Accuracy</strong>. Stethobot's diagnostic models are, on average,
+    over 88% accurate and up to 96% accurate.
+  </li>
+  <li>
+    <strong>Quality assurance</strong>. You will never, <i>ever</i> see any
+    model on Stethobot that doesn't possess at least 80% accuracy, and the
+    average across models will never, <i>ever</i> drop below 85%.
+  </li>
+  <li>
+    <strong>Extra statistics</strong>. In addition to providing each model's
+    accuracy, Stethobot also provides the <i>sensitivity</i> and
+    <i>specificity</i>, so you can properly gauge a model's likelihood to
+    produce false positives and false negatives.
+  </li>
+  <li>
+    <strong>Trusted algorithms</strong>. Stethobot makes heavy use of
+    <a
+      href="https://statistics.berkeley.edu/sites/default/files/tech-reports/666.pdf"
+      >Balanced Random Forests</a
+    >, which are an <i>upgraded</i> variant of the well-known and
+    highly-performative
+    <a href="https://jmlr.org/papers/volume15/delgado14a/delgado14a.pdf"
+      >Random Forest</a
+    >
+    algorithm. Balanced Random Forests are more resilient to the common issue of
+    unbalanced data in medical datasets. And speaking of datasets...
+  </li>
+  <li>
+    <strong>Transparency</strong>. Stethobot's models are trained off of
+    well-known and publicly-available datasets contained the
+    <a href="https://archive.ics.uci.edu/ml/index.php"
+      >UC Irvine Machine Learning Repository</a
+    >. So if you're ever in doubt of a model, you can check the dataset it was
+    trained with. In addition, Stethobot also lists the authors of each dataset
+    and their contact information.
+  </li>
+  <li>
+    <strong>Privacy</strong>. The data you send to Stethobot is not stored.
+    Period.
+  </li>
+  <li>
+    <strong>Free and account-less</strong>. You don't have to pay to use
+    Stethobot, and you don't have to register for an account. Neither will you
+    be burdened with advertisements: Stethobot is a passion project, not a
+    commercial one.
+  </li>
+  <li>
+    <strong>Simple and streamlined</strong>. Forget the auto-playing videos,
+    pop-up ads, hidden menus, and other annoyances that many other modern
+    websites employ. Stethobot's UX is simple, clean, fast, and to-the-point.
+  </li>
+</ul>
+<h2>Why <i>not</i> Stethobot?</h2>
+<p>
+  As aforementioned, Stethobot is a <strong>proof-of-concept</strong> and a
+  <strong>passion project</strong> at its core. It wasn't made with serious,
+  real-world use in mind.
+</p>
+<p>
+  This point is not brought up to downplay Stethobot's capabilities. Rather, it
+  is simply to strongly encourage any medical professional that is considering
+  serious usage of this website in a real-world application to exercise
+  reasonable caution. For instance, they should...
+</p>
+<ul>
+  <li>
+    ...thoroughly investigate the datasets used to train the models that they
+    wish to use.
+  </li>
+  <li>
+    ...ensure that they have all the necessary resources to gather the values
+    that Stethobot requires to make a prediction.
+  </li>
+  <li>
+    ...compare Stethobot's diagonses with that of their fellow medical
+    professionals in order to ascertain its viability.
+  </li>
+</ul>
+{% endblock %}
