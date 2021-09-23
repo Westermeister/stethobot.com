@@ -96,7 +96,7 @@ def test_out_of_bag_accuracy():
     numerator = abs(reference.oob_score_ - custom._oob_accuracy)
     denominator = (reference.oob_score_ + custom._oob_accuracy) / 2
     percent_diff = (numerator / denominator) * 100
-    assert percent_diff < 10
+    assert percent_diff < 5
 
 
 def test_predictions():
@@ -115,7 +115,7 @@ def test_predictions():
         reference_prediction = reference.predict([obs])[0]
         reference_predictions.append(reference_prediction)
         # Predict with custom model.
-        custom_prediction = custom.diagnose(obs)
+        custom_prediction = custom._run_forest(custom._forest, obs)
         label = max(custom_prediction, key=lambda key: custom_prediction[key])
         custom_predictions.append(label)
     for reference_prediction, custom_prediction in zip(
