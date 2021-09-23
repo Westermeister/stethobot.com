@@ -1,5 +1,4 @@
-<!-- prettier-ignore -->
-{% extends "base-input.html" %}
+{% extends "base/base-input.html" %}
 
 {% block title -%}
 Diagnose breast cancer | Stethobot
@@ -52,9 +51,8 @@ https://stethobot.com/conditions/breast-cancer
 <h2>Inputs</h2>
 {% endblock %}
 
-<!-- prettier-ignore -->
 {% block action -%}
-/api/diagnose/breast-cancer
+/conditions/breast-cancer
 {%- endblock %}
 
 {% block inputs %}

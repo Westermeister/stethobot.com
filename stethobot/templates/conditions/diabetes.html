@@ -1,5 +1,4 @@
-<!-- prettier-ignore -->
-{% extends "base-input.html" %}
+{% extends "base/base-input.html" %}
 
 {% block title -%}
 Diagnose diabetes | Stethobot
@@ -43,9 +42,8 @@ https://stethobot.com/conditions/diabetes
 <h2>Inputs</h2>
 {% endblock %}
 
-<!-- prettier-ignore -->
 {% block action -%}
-/api/diagnose/diabetes
+/conditions/diabetes
 {%- endblock %}
 
 {% block inputs %}

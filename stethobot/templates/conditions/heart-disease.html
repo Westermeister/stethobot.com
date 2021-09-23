@@ -1,5 +1,4 @@
-<!-- prettier-ignore -->
-{% extends "base-input.html" %}
+{% extends "base/base-input.html" %}
 
 {% block title -%}
 Diagnose heart disease | Stethobot
@@ -81,9 +80,8 @@ https://stethobot.com/conditions/heart-disease
 <h2>Inputs</h2>
 {% endblock %}
 
-<!-- prettier-ignore -->
 {% block action -%}
-/api/diagnose/heart-disease
+/conditions/heart-disease
 {%- endblock %}
 
 {% block inputs %}

@@ -1,5 +1,4 @@
-<!-- prettier-ignore -->
-{% extends "base.html" %}
+{% extends "base/base.html" %}
 
 {% block title -%}
 Conditions | Stethobot
@@ -136,8 +135,8 @@ https://stethobot.com/conditions/
   >
   (filled as zeros) starting from the <i>Glucose</i> column going through the
   <i>Age</i> column. Stethobot currently handles these missing values by
-  imputing them via the label-wise median. An alternative — simply removing
-  observations with missing values — was also attempted, but this led to a ~10%
+  imputing them via the label-wise median. An alternative - simply removing
+  observations with missing values - was also attempted, but this led to a ~10%
   drop in accuracy compared to imputation.
 </p>
 
