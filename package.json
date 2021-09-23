@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "export FLASK_ENV=development && cd stethobot && python -m flask run --port=8080"
+  },
   "devDependencies": {
     "prettier": "2.3.2",
     "sass": "1.39.0"
