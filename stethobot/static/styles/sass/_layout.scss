@@ -1,24 +1,81 @@
 // Define the spacing of the general layout of the page.
 
-// For mobile, keep content width close to 100% but keep some margin.
+@import "./variables";
+
 @media screen and (max-width: $as-big-as) {
+  // For mobile, keep content width close to 100% but keep some margin.
   #content {
     margin: 0 auto;
     max-width: 90%;
     text-align: left;
   }
+
+  #footer {
+    font-size: 0.7rem;
+    text-align: center;
+    color: $off-white;
+    background-color: $off-black;
+    font-style: italic;
+    margin-top: 100px;
+    height: $navbar-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // Special positioning for diagnosis results.
+  #footer-absolute {
+    font-size: 0.7rem;
+    text-align: center;
+    color: $off-white;
+    background-color: $off-black;
+    font-style: italic;
+    margin-top: 100px;
+    height: $navbar-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
 }
 
-// For desktop, limit the width so we don't grow indefinitely.
 @media screen and (min-width: $as-small-as) {
+  // For desktop, limit the width so we don't grow indefinitely.
   #content {
     margin: 0 auto;
     max-width: 730px;
     text-align: left;
   }
-}
 
-// Give the footer some spacing so the page doesn't end abruptly.
-body {
-  margin-bottom: 100px;
+  // Just remove the smaller font size.
+  #footer {
+    text-align: center;
+    color: $off-white;
+    background-color: $off-black;
+    font-style: italic;
+    margin-top: 100px;
+    height: $navbar-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // Special positioning for diagnosis results.
+  // Like #footer above, just remove the smaller font size.
+  #footer-absolute {
+    text-align: center;
+    color: $off-white;
+    background-color: $off-black;
+    font-style: italic;
+    margin-top: 100px;
+    height: $navbar-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
 }
