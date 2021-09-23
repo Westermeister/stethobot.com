@@ -456,7 +456,7 @@ class DiagnosticModel:
 
         Returns:
             A 2-tuple (diagnosis, confidence_score) where the first is a string - either "positive" or "negative" - and
-            the second is a number between 0 and 100 representing the model's confidence in its diagnosis.
+            the second is an integer between 0 and 100 representing the model's confidence in its diagnosis.
 
         Raises:
             AttributeError: The model hasn't been fitted or loaded.
@@ -470,7 +470,7 @@ class DiagnosticModel:
             raise AttributeError("Model is uninitialized.")
         result = self._run_forest(self._forest, observation)
         diagnosis = max(result, key=result.get)
-        confidence_score = result[diagnosis] * 100
+        confidence_score = int(result[diagnosis] * 100)
         return diagnosis, confidence_score
 
     def to_json(self):
