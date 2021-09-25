@@ -1,3 +1,10 @@
+# 2021.09.24
+
+- Made minor naming and formatting adjustments within `api` directory.
+  - Added missing newline at end of diabetes' sample file.
+  - Added `.csv` suffix to all sample files, and updated each `fit.py` accordingly.
+  - Removed unicode characters (em dashes) from each `README.txt` file.
+
 # 2021.09.23
 
 - Migrated from old repository to new one.
