@@ -13,7 +13,7 @@ from model import DiagnosticModel
 def main() -> None:
     """Produce heart disease diagnosis model."""
     #  Load sample file's lines into list, excluding trailing newline chars.
-    with open("sample") as f:
+    with open("sample.csv") as f:
         lines = [line.rstrip() for line in f.readlines()]
 
     # Turn each CSV record (i.e. each line) into a list, thereby making a list of lists of strings.

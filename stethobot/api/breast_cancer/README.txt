@@ -1,14 +1,14 @@
 Model
-—————
+=====
 - Type: Balanced Random Forest
 
 Dataset Source
-——————————————
+==============
 - The model was fit on the following dataset:
   https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/wdbc.data
 
 Dataset Predictors
-——————————————————
+==================
 - The first 2 columns are an ID number and the label: M for malignant, B for benign.
 - The dataset's predictors are based off of a digitized image of a fine needle aspirate (FNA) of a breast mass.
 - The dataset contains 30 predictors:
@@ -27,7 +27,7 @@ Dataset Predictors
     - The last 10 are the maximum of the first 10 variables.
 
 Dataset Contributors
-————————————————————
+====================
 - Stethobot would like to recognize the individuals and organizations responsible for this dataset.
 - Thanks to the 3 authors who created this dataset:
     1. Dr. William H. Wolberg, General Surgery Dept.

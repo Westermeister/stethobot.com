@@ -1,14 +1,14 @@
 Model
-—————
+=====
 - Type: Balanced Random Forest
 
 Dataset Source
-——————————————
+==============
 - The model was fitted on the following dataset:
   https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data
 
 Dataset Predictors
-——————————————————
+==================
 - The dataset contains the following 13 predictors that are used to predict heart disease:
     1) Age in years.
     2) Sex. 1 = male, 0 = female.
@@ -35,7 +35,7 @@ Dataset Predictors
         i.e. Anything from 1 to 4 is heart disease, with 0 being a lack of heart disease.
 
 Dataset Contributors
-————————————————————
+====================
 - Stethobot would like to recognize the individuals and organizations responsible for this dataset.
 - Thanks to the 4 authors who generously donated this dataset:
     1. Hungarian Institute of Cardiology. Budapest: Andras Janosi, M.D.
