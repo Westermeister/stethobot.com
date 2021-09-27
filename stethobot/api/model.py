@@ -390,9 +390,10 @@ class DiagnosticModel:
         """Fit the model to a given sample of observations and a list of diagnoses.
 
         Args:
-            sample: A 2D, rectangular list of integers/floats/strings/NoneTypes. Columns can have any number of
+            sample: A non-jagged list of lists of integers/floats/strings/NoneTypes. Columns can have any number of
                 NoneTypes, but must have one or more non-NoneTypes; these must be either integers/floats or strings,
                 but not a mix of both. Any NoneTypes within a column will be imputed based off of the non-NoneTypes.
+                Any duplicate rows will be removed.
             diagnoses: A list of strings, all of which must be either "positive" and "negative".
 
         Returns:
@@ -521,7 +522,7 @@ class DiagnosticModel:
         """Remove duplicates in the input data.
 
         Args:
-            sample: A 2D, rectangular list of integers/floats/strings/NoneTypes.
+            sample: A non-jagged list of lists of integers/floats/strings/NoneTypes.
             diagnoses: A list of strings, all of which must be either "positive" and "negative".
 
         Returns:
