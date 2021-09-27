@@ -33,12 +33,17 @@
       <h1>Diagnosis</h1>
       <p>Your diagnosis for {{ condition }} is:</p>
       {% if diagnosis == "positive" %}
-        <h2 id="result-pos">(+) Positive</h2>
+      <h2 id="result-pos">(+) Positive</h2>
       {% else %}
-        <h2 id="result-neg">(-) Negative</h2>
+      <h2 id="result-neg">(-) Negative</h2>
       {% endif %}
-      <p>The model is <strong>{{ confidence_score }}%</strong> confident in this diagnosis.</p>
+      <p>
+        The model is <strong>{{ confidence_score }}%</strong> confident in this
+        diagnosis.
+      </p>
     </div>
-    <footer id="footer-absolute">Copyright &copy; 2021 The Stethobot Authors. All rights reserved.</footer>
+    <footer id="footer-absolute">
+      Copyright &copy; 2021 The Stethobot Authors. All rights reserved.
+    </footer>
   </body>
 </html>
