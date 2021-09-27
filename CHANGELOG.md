@@ -1,3 +1,22 @@
+# 2021.09.26
+
+- Rewrote legal content.
+  - Updated terms of service to be more like [Legalmattic](https://github.com/Automattic/legalmattic)'s terms of
+    service.
+    - Licensed terms of service as [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) as required.
+  - Made privacy policy more specific.
+  - Updated attribution section to use a more relevant "hugging" emoji as opposed to a generic copyright symbol emoji.
+    - Also renamed attribution section to "Attribution" instead of "Emoji Disclaimer" as we now have to provide
+      attribution for a second, unrelated party.
+- Made minor clarifications within docstrings in the model implementation file.
+  - Specifically, referred to the sample as a "non-jagged list of lists" rather than a "2D rectangular list".
+- Changed listed model statistics to be more representative of the average fitting result.
+  - Previously, the output from a single run was used. This update enables flexibility in refitting without having to
+    constantly update the listed model statistics for minor fluctuations.
+  - The fact that the statistics are only approximations has been noted in the new terms of service.
+- Added `prettier-ignore` flags throughout several pages.
+  - Although ugly, the flags enable the use of Prettier without messing up the Jinja syntax.
+
 # 2021.09.24
 
 - Made minor naming and formatting adjustments within `api` directory.
