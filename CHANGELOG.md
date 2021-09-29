@@ -1,3 +1,9 @@
+# 2021.09.28
+
+- Updated terms of service.
+  - Reworded a few sections.
+  - Replaced uppercase from sections 5 to 7 with highlighting.
+
 # 2021.09.26
 
 - Rewrote legal content.
