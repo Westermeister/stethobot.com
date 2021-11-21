@@ -1,3 +1,7 @@
+# 2021.11.20
+
+- Added a simple explanation of the repository's structure to the `README.md`.
+
 # 2021.09.28
 
 - Updated terms of service.
